@@ -1,0 +1,314 @@
+%pic {
+  height: 550px;
+  width:100%;
+}
+@mixin background($primary-pic) {
+ 		background-position: center; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-bottom-right-radius: 40%;
+
+}
+
+.header{
+	background-image: url($primary-pic);
+	@include background($primary-pic);
+	@extend %pic;
+  }
+ main {
+      margin: 0 auto;
+      width: 960px;
+      
+}
+
+body{
+    background-color:map-get($colors, dark);
+}
+
+%logo{
+    
+    display: flex;
+    justify-content: space-evenly;
+    width: 110px;
+    margin-left: 150px;
+    font-family: map-get($fonts, freska);
+    font-family: map-get($fonts, hindi);
+    color: map-get($colors, whiteGr);
+
+    > p{
+    margin-top:20px;
+    
+    
+    font-weight: 600;
+
+        > span{
+        display:block;
+        text-align: center;
+        font-size: 6px;
+        }
+
+    }
+
+
+    > img{
+    margin-top:20px;
+    width: 30px;
+    height: 30px;
+    }
+
+
+}
+
+.landing-logo  {
+    @extend %logo;
+}
+	
+
+
+ 
+
+.header_heading{
+	margin: 0;
+    margin-top: -8px;
+    font-family: map-get($fonts, sourseSP);
+    font-family: map-get($fonts, sourseSP2);
+    font-weight: 650;
+    color: map-get($colors, gray);
+     color: map-get($colors, white2);
+    font-size: 50px;
+    width: 350px;
+    margin-left: 150px;
+    position:relative;
+    z-index:2;
+
+    &::after{
+    content:"";
+    position: absolute;
+    bottom: 10px;
+    left:0px;
+    height: 30px;
+    width: 210px;
+    background-color: map-get($colors, red);
+    background-color: map-get($colors, blue);
+    z-index: -1;
+    }
+
+}
+
+
+.header_text{
+    line-height: 1.3em;
+	white-space: pre; 
+    margin-left: 115px;
+  	color: map-get($colors, gray);
+    color: map-get($colors, white2);
+    font-family: map-get($fonts, sourseSP);
+    font-family: map-get($fonts, sourseSP2);
+}
+
+@mixin button($butt){
+    background-color: map-get($colors, green);
+    background-color: map-get($colors, orange);
+    width: 110px;
+    color:  map-get($colors, white);
+    color:  map-get($colors, white2);
+    border-radius: 5px;
+    border-style: none;
+    height: 40px;
+    
+	
+}
+
+div:nth-child(4){
+.header_button{
+	@include button($butt);
+	margin-left: 150px;
+
+
+}
+@mixin link($firstLink){
+	color:  map-get($colors, white);
+    color:  map-get($colors, white2);
+    margin-left: 169px;
+}
+
+
+
+.login{
+	@include link($firstLink);
+}
+}
+
+
+@each $var in section_card {
+.#{$var} {
+
+	display: inline-flex;
+	background-color: map-get($colors, darkBlue);
+	color: map-get($colors, whiteGr);
+	text-align: center;
+	height: 245px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+}
+@each $var in section_card_img {
+.#{$var} {
+
+	margin: 15px;
+    width: 100%;
+    border-radius: 5px;
+}
+}
+
+@each $var in section_card_heading {
+.#{$var} {
+
+	font-size: 20px;
+    margin-top: 43px;
+    color:  map-get($colors, white);
+    color:  map-get($colors, white2);
+}
+}
+
+@mixin myLink($secondLink){
+	color: map-get($colors, whiteGr);
+	font-family: map-get($fonts, sourseSP);
+    font-family: map-get($fonts, sourseSP2);
+	display: block;
+	margin: 25px;
+}
+.section_link{
+	@include myLink($secondLink);
+}
+
+
+@each $var in section_card_text {
+.#{$var} {
+
+	margin-left: 60px;
+    margin-right: 60px;
+    line-height: 1.4em;
+    font-family:map-get($fonts, fresca);
+    font-family: map-get($fonts, sourseSP);
+    text-align: left;
+}
+}
+.section_text{
+	text-align: center;
+    font-family: map-get($fonts, sourseSP);
+    font-family: map-get($fonts, sourseSP2);
+    font-size: 30px;
+    font-weight: 600;
+    color: map-get($colors, white2);
+    position:relative;
+    z-index:2;
+&::after{
+    content:"";
+    position: absolute;
+    bottom: 5px;
+    left:485px;
+    height: 40px;
+    width: 135px;
+    background-color: map-get($colors, red);
+    background-color: map-get($colors, blue);
+    z-index: -1;
+    }
+
+}
+
+
+
+.section_banner{
+	background:$gradient-rgb;
+	background:$gradient-background;
+	height: 120px;
+	transform: translateY(60px);
+
+.section_banner_heading{
+	   
+   
+    font-family: map-get($fonts, sourseSP);
+    font-family: map-get($fonts,  sourseSP2);
+    color: map-get($colors, white2);
+    font-weight: 600;
+    font-size: 25px;
+    margin-left: 150px;
+    display: flex;
+    width: 350px;
+    height: 50px; 
+    align-items: flex-end;
+    position:relative;
+    z-index:2;
+&::after{
+    content:"";
+    position: absolute;
+    bottom: 5px;
+    left:100px;
+    height: 35px;
+    width: 50px;
+    background-color: map-get($colors, red);
+     background-color: map-get($colors, blue);
+    z-index: -1;
+    }
+}
+
+.section_banner_text{
+	color: map-get($colors, whiteGr);
+    color: map-get($colors, white2);
+	font-family: map-get($fonts, sourseSP);
+    font-family: map-get($fonts, fresca);
+    margin-left: 150px;
+    margin-top: -10px;
+}
+.section_banner_button{
+	@include button($butt);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-left: 700px;
+    margin-top: -60px;
+
+}
+
+}
+
+
+.footer{
+	
+.footer-wrap{
+	background-color: map-get($colors, darkBlue);
+	display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: map-get($colors, whiteGr);
+    height: 180px;
+
+.landing-logo {
+    @extend %logo;
+    padding: 29px;
+
+    
+}
+
+
+.footer_text{
+	font-size: 10px;
+    font-family: map-get($fonts, sourseSP);
+    font-family: map-get($fonts, freska);
+    width:210px;
+    color: map-get($colors, whiteGr);
+    line-height: 1.5em;
+    margin-bottom: 40px;
+}
+.footer-cr{
+	width: 210px;
+    font-size: 12px;
+    position: relative;
+    margin: 50px;
+}}}
+
+
+
+
